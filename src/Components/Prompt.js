@@ -31,14 +31,10 @@ const Prompt = (props) => {
     >
       <ModalOverlay />
       <ModalContent>
-        <ModalHeader> Create OR Join Room </ModalHeader>
+        <ModalHeader> Enter username to Chat </ModalHeader>
 
         <ModalBody pb={6}>
-          <FormControl isRequired={true}>
-            <FormLabel> Room Name </FormLabel>
-            <Input ref={initialRef} placeholder="Room Name" value={props.room} onChange={e => props.setRoom(e.target.value)}  />
-          </FormControl>
-
+        
           <FormControl mt={4} isRequired={true}>
             <FormLabel> User Name </FormLabel>
             <Input ref={initialRef} placeholder="User name" value={props.username} onChange={e => props.setName(e.target.value)} />
