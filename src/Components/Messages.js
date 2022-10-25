@@ -10,7 +10,7 @@ const Messages = ({ messages }) => {
     return (
         <Flex w="100%" h="80%" overflowY="scroll" flexDirection="column" p="3">
             {messages.map((item, index) => {
-                if (item.from === "me") {
+                if (item.from === sessionStorage.getItem("user")) {
                     return (
                         <Flex key={index} w="100%" justify="flex-end">
                             <Flex
@@ -33,7 +33,7 @@ const Messages = ({ messages }) => {
                     
                         <Flex key={index} w ="100%">
                             <Avatar
-                                name="Anon" 
+                                name={ item.from} 
                                 bg="gray.400"
                             >
                             </Avatar>
@@ -53,6 +53,7 @@ const Messages = ({ messages }) => {
                     )
                 }
             })}
+            <AlwaysScrollToBottom/>
         </Flex>
     )
 }
