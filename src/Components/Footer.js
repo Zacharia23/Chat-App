@@ -20,6 +20,7 @@ const Footer = ({ inputMessage, setInputMessage, handleSendMessage }) => {
             />
 
             <Button
+                data-testid="sendButton"
                 bg="blue.500"
                 color="white"
                 borderRadius="none"
@@ -28,7 +29,7 @@ const Footer = ({ inputMessage, setInputMessage, handleSendMessage }) => {
                     color: "black", 
                     border: "1px solid black"
                 }}
-                disabled={inputMessage.trim().length <= 0}
+                disabled={(inputMessage || '').trim().length <= 0}
                 onClick={handleSendMessage}
             >
                 Send
